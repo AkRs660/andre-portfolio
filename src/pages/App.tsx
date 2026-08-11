@@ -56,7 +56,7 @@ export function App() {
         <section className="section" id="projects">
           <div className="section-heading">
             <p className="eyebrow">Ausgewählte Arbeit</p>
-            <h2>Projekte mit Substanz, nicht nur Screenshots.</h2>
+            <h2>nur Projecte</h2>
           </div>
           <div className="projects-grid">
             {projects.map((project, index) => (
