@@ -508,6 +508,27 @@ h1 span {
   transform: perspective(1000px) rotateY(-10deg) rotateX(5deg);
 }
 
+.project-media-section {
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 8px;
+  background: #202020;
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.28);
+}
+
+.project-media-section img,
+.project-media-section video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.project-media-section video {
+  max-height: 76vh;
+  background: #000;
+}
+
 .device-bar {
   display: flex;
   gap: 8px;

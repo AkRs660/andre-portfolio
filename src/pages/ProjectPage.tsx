@@ -55,6 +55,19 @@ export function ProjectPage() {
           </article>
         </section>
 
+        {project.image || project.video ? (
+          <section className="section project-media-section">
+            {project.video ? (
+              <video controls preload="metadata">
+                <source src={project.video} type="video/mp4" />
+                Ihr Browser kann dieses Video nicht abspielen.
+              </video>
+            ) : (
+              <img src={project.image} alt={project.imageAlt ?? `Screenshot von ${project.title}`} />
+            )}
+          </section>
+        ) : null}
+
         <section className="section">
           <div className="section-heading">
             <p className="eyebrow">Mehr Projekte</p>

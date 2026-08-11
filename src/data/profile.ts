@@ -61,6 +61,10 @@ export type Project = {
   year: string;
   stack: string[];
   repo?: string;
+  image?: string;
+  imageAlt?: string;
+  video?: string;
+  videoTitle?: string;
   summary: string;
   details: string[];
   impact: string[];
@@ -70,86 +74,90 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "schliesfach",
-    title: "Schliesfach",
-    subtitle: "Full-Stack-Plattform mit Next.js, MSSQL und abgesicherter Purchase-API",
+    title: "Schließfach",
+    subtitle: "Onlineshop mit Abholung per Code und API-gesteuerten Schließfächern",
     type: "Full-Stack Web App",
     year: "2026",
     stack: ["Next.js 16", "React 19", "TypeScript", "MSSQL", "Docker", "HMAC"],
     accent: "#33d6ff",
     summary:
-      "Schliesfach ist das technisch stärkste Projekt im Portfolio: eine moderne Webanwendung mit Datenbank, serverseitiger Kaufweitergabe und sauberer Trennung zwischen Frontend, Datenmodell und Python-API.",
+      "Dies ist eine Website, die einen Onlineshop abbildet. Kunden können hier Artikel kaufen, erhalten diese jedoch nicht per Post nach Hause geliefert.",
     details: [
-      "Next.js-App mit Artikel-, Auth- und Kaufprozessen auf Basis von Microsoft SQL Server.",
-      "Serverseitige Purchase-API-Anbindung mit gemeinsamem Secret, Timestamp und HMAC-Signatur.",
-      "Dockerisierte MSSQL-Entwicklungsumgebung mit Initialisierungsskripten für reproduzierbare Datenbankzustände."
+      "Stattdessen bekommen sie einen Code per E-Mail zugeschickt, den sie anschließend vor Ort an einer Box eingeben können, um ihr Paket abzuholen.",
+      "Im Hintergrund steuert eine API die Schließfächer und sorgt dafür, dass sich das jeweilige Fach nach Eingabe des korrekten Codes automatisch öffnet.",
+      "Der Betreiber verfügt zudem über eine eigene Admin-Oberfläche zur Verwaltung."
     ],
     impact: [
-      "Zeigt Full-Stack-Denken über UI, Datenbank, API-Sicherheit und Betrieb hinweg.",
-      "Passt fachlich zu .NET/MSSQL-Unternehmensumfeldern, weil Datenmodellierung und saubere Prozessgrenzen sichtbar werden.",
-      "Geeignet als Gesprächsanker für Sicherheit, Deployment, Fehlerbehandlung und Schnittstellendesign."
+      "Ursprünglich habe ich diese Seite im Rahmen meines Minijobs programmiert.",
+      "Das Projekt verbindet Onlineshop, Code-Versand, Schließfachsteuerung und Administration zu einem vollständigen Ablauf.",
+      "Es zeigt den Umgang mit Frontend, Backend, Datenbank und API-gesteuerter Hardware-Anbindung."
     ]
   },
   {
     slug: "mrpanini",
     title: "MrPanini",
-    subtitle: "Bestell- und Admin-Erlebnis für ein digitales Food-/Menüsystem",
+    subtitle: "Mockup einer digitalen Bestellseite für ein Restaurant",
     type: "Produktnahe Web App",
     year: "2025",
     stack: ["Next.js 14", "React", "TypeScript", "Radix UI", "Tailwind", "Zod"],
     accent: "#ffb020",
     summary:
-      "MrPanini wirkt wie ein echtes Produkt: Menü, Warenkorb, Bestellung, Login/Register, Kontakt und Admin-Bereiche sind als zusammenhängender digitaler Workflow aufgebaut.",
+      "MrPanini war ein Mockup einer Bestellseite für ein Restaurant. Die Seite zeigt beispielhaft, wie Kunden Speisen online auswählen und bestellen könnten.",
     details: [
-      "App-Router-Struktur mit getrennten Bereichen für Menü, Order-Flow, Kontakt, Login, Registrierung und Administration.",
-      "Komponentenbasierte Oberfläche mit Radix UI, Formularlogik, Validierung und wiederverwendbaren UI-Bausteinen.",
-      "Admin-nahe Seiten für Verwaltungsszenarien, die über reine Showcase-UI hinausgehen."
+      "Das Projekt war bereits teilweise funktionsfähig umgesetzt.",
+      "Es enthielt unter anderem eine Speisekarte, einen Warenkorb sowie eine eigene Admin-Oberfläche zur Verwaltung.",
+      "Die Oberfläche bildet einen beispielhaften digitalen Bestellprozess für ein Restaurant ab."
     ],
     impact: [
-      "Demonstriert Produktverständnis: Nutzerführung, Bestellprozess und Verwaltungsoberfläche greifen zusammen.",
-      "Starker Nachweis für moderne React-/Next.js-Architektur und komponentenorientiertes Arbeiten.",
-      "Bietet gutes Material für Bewerbungsgespräche über UX, Datenflüsse und saubere Frontend-Strukturen."
+      "Zeigt, wie ein Restaurant-Bestellprozess online strukturiert werden kann.",
+      "Verbindet Kundensicht und Verwaltungsoberfläche in einem Projekt.",
+      "Dient als praxisnahes Beispiel für UI-Aufbau, Warenkorb-Logik und Admin-Funktionen."
     ]
   },
   {
     slug: "speechtomindmap",
     title: "SpeechToMindMap",
-    subtitle: "Ideen aus Sprache und Notizen in strukturierte Mindmaps bringen",
+    subtitle: "Gespräche aufnehmen, auswerten und automatisch als Mindmap visualisieren",
     type: "Produktivitäts-Tool",
     year: "2025",
     stack: ["JavaScript", "Tailwind CSS", "Prompt Engineering", "UI Prototyping"],
     accent: "#8cffc1",
+    image: "/projects/speechtomindmap.png",
+    imageAlt: "Screenshot der SpeechToMindMap Anwendung mit Mindmap und Aufnahme-Seitenleiste",
     summary:
-      "SpeechToMindMap ist ein kompaktes Tool-Konzept, das unstrukturierte Eingaben in eine visuell besser nutzbare Denkstruktur übersetzt.",
+      "Dieses Projekt nimmt über ein Mikrofon Gespräche auf und wertet diese automatisch aus. Der aufgenommene Inhalt wird zusammengefasst und anschließend über eine API-Schnittstelle in ein passendes JSON-Format für eine Mindmap umgewandelt.",
     details: [
-      "Tailwind-basierte Oberfläche mit Fokus auf schnelle Eingabe und visuelle Strukturierung.",
-      "Prompt- und Ausgabeoptimierung als Kern der Produktidee.",
-      "Lokale und offizielle Varianten zeigen Iteration von Experiment zu stabilerer Version."
+      "Aus dem zurückgelieferten JSON wird automatisch eine Mindmap generiert, die das Gespräch übersichtlich und strukturiert visualisiert.",
+      "Die Anwendung ist speziell für Kickoff-Meetings gedacht und hält erste Ergebnisse und Ideen direkt während des Gesprächs fest.",
+      "Zusätzlich verfügt das Projekt über ein Session-System, sodass einzelne Meetings als eigenständige Sitzungen verwaltet werden können."
     ],
     impact: [
-      "Zeigt Interesse an KI-nahen Workflows und nutzerorientierten Produktivitätstools.",
-      "Guter Beleg für schnelles Prototyping und Verbesserung durch Prompt-Iteration.",
-      "Ergänzt das Portfolio um ein Tool abseits klassischer CRUD-Anwendungen."
+      "Ergebnisse können ganz ohne Moderator gesammelt werden, der manuell mitschreibt oder die Diskussion zusammenfasst.",
+      "Erstellte Mindmaps können gespeichert, wiedergefunden und im Nachhinein erneut aufgerufen werden.",
+      "Das Projekt verbindet Audioaufnahme, Transkription, API-Verarbeitung und automatische Visualisierung."
     ]
   },
   {
     slug: "mindrunner",
     title: "MindRunner",
-    subtitle: "Python-Game mit eigener Spiellogik, Gegnern und Projektilsystem",
+    subtitle: "Kleines Jump-and-Run-Minispiel mit Gegnern und Projektilen",
     type: "Game/Logic Project",
     year: "2025",
     stack: ["Python", "Game Loop", "OOP", "Collision Logic", "Asset Handling"],
     accent: "#ff5f7e",
+    video: "/projects/mindrunner.mp4",
+    videoTitle: "MindRunner Gameplay",
     summary:
-      "MindRunner zeigt, dass André nicht nur Business-UIs baut, sondern auch Zustände, Interaktion, Gegnerverhalten und Timing in einer eigenen Spielwelt strukturieren kann.",
+      "MindRunner ist ein kleines Jump-and-Run-Minispiel. Der Spieler bewegt sich durch die Spielwelt, springt über Hindernisse und kann auf Gegner treffen, die sich abschießen lassen.",
     details: [
-      "Eigene Python-Module für Character, Controller, Enemy, Projectile, Title Screen und Game Over Screen.",
-      "Mehrere Logikbereiche getrennt in Dateien statt als monolithisches Script.",
-      "Spielzustände, Gegner- und Projektilverhalten als objektorientierte Struktur umgesetzt."
+      "Der Spieler steuert eine Figur durch eine eigene Spielwelt.",
+      "Hindernisse, Gegner und abschießbare Ziele sorgen für einfache Spielmechaniken.",
+      "Die Spiellogik ist in mehrere Python-Module aufgeteilt."
     ],
     impact: [
-      "Demonstriert algorithmisches Denken, Zustandsmanagement und interaktive Systeme.",
-      "Macht technische Vielseitigkeit sichtbar, ohne vom .NET-Schwerpunkt abzulenken.",
-      "Guter Gesprächseinstieg zu Architekturentscheidungen in kleinen Projekten."
+      "Zeigt den Umgang mit Game Loop, Zuständen und Kollisionen.",
+      "Macht interaktive Logik außerhalb klassischer Web- oder Business-Anwendungen sichtbar.",
+      "Dient als kleines Beispiel für objektorientierte Strukturierung in Python."
     ]
   }
 ];
