@@ -55,9 +55,18 @@ export function ProjectPage() {
           </article>
         </section>
 
-        {project.image || project.video ? (
+        {project.images?.length || project.image || project.video ? (
           <section className="section project-media-section">
-            {project.video ? (
+            {project.images?.length ? (
+              <div className="project-gallery">
+                {project.images.map((image) => (
+                  <figure className="project-gallery-item" key={image.src}>
+                    {image.title ? <figcaption>{image.title}</figcaption> : null}
+                    <img src={image.src} alt={image.alt} />
+                  </figure>
+                ))}
+              </div>
+            ) : project.video ? (
               <video controls preload="metadata">
                 <source src={project.video} type="video/mp4" />
                 Ihr Browser kann dieses Video nicht abspielen.

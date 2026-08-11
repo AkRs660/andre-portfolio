@@ -1,4 +1,4 @@
-import { ArrowRight, BriefcaseBusiness, Code2, Database, ExternalLink, Flame, Github, Mail, ShieldCheck } from "lucide-react";
+import { ArrowRight, BriefcaseBusiness, Code2, Database, Flame, Mail, ShieldCheck } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Header } from "../components/Header";
@@ -139,9 +139,6 @@ export function App() {
           <div className="hero-actions">
             <a className="primary-button" href={`mailto:${profile.email}`}>
               <Mail size={18} /> E-Mail schreiben
-            </a>
-            <a className="ghost-button" href={profile.github} target="_blank" rel="noreferrer">
-              <Github size={18} /> GitHub <ExternalLink size={15} />
             </a>
           </div>
         </section>

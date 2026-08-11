@@ -2,7 +2,6 @@ export const profile = {
   name: "André Krämer",
   role: "Softwareentwickler (.NET)",
   email: "andrekraemer94@gmail.com",
-  github: "https://github.com/AkRs660",
   location: "Ostrhauderfehn, Niedersachsen",
   intro:
     "Softwareentwickler mit beruflichem Schwerpunkt auf C#, .NET, WPF, Blazor und Microsoft SQL Server. In privaten Projekten nutze ich bewusst auch React, Next.js und Python, weil sich damit Ideen schnell als sichtbare Prototypen, Web-Tools oder interaktive Anwendungen umsetzen lassen.",
@@ -63,6 +62,11 @@ export type Project = {
   repo?: string;
   image?: string;
   imageAlt?: string;
+  images?: {
+    src: string;
+    alt: string;
+    title?: string;
+  }[];
   video?: string;
   videoTitle?: string;
   summary: string;
@@ -80,6 +84,25 @@ export const projects: Project[] = [
     year: "2026",
     stack: ["Next.js 16", "React 19", "TypeScript", "MSSQL", "Docker", "HMAC"],
     accent: "#33d6ff",
+    images: [
+      {
+        src: "/projects/schliesfach-login.png",
+        alt: "Schließfach Login-Seite mit Alting Branding"
+      },
+      {
+        src: "/projects/schliesfach-home.png",
+        alt: "Schließfach Startseite mit Hero-Bereich und Schließfachgrafik"
+      },
+      {
+        src: "/projects/schliesfach-products.png",
+        alt: "Schließfach Produktübersicht mit Artikeln"
+      },
+      {
+        src: "/projects/schliesfach-admin.png",
+        alt: "Schließfach Admin-Bereich mit Schließfachanlage und belegten Fächern",
+        title: "Admin Bereich"
+      }
+    ],
     summary:
       "Dies ist eine Website, die einen Onlineshop abbildet. Kunden können hier Artikel kaufen, erhalten diese jedoch nicht per Post nach Hause geliefert.",
     details: [
